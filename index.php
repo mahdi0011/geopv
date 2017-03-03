@@ -95,7 +95,7 @@ function save($filename,$TXTdata)
 	fclose($myfile);
 	}
 //===========
-$inch = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@DevelopersCity&user_id=".$from_id);
+$inch = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@Hacker_Riz&user_id=".$from_id);
 	
 	if (strpos($inch , '"status":"left"') !== false ) {
 SendMessage($chat_id,"برای استفاده از ربات اول در کانال ما عضو شوید.
@@ -243,7 +243,7 @@ $token = $textmessage ;
 		$source = str_replace("[*BOTTOKEN*]",$token,$source);
 		$source = str_replace("66443035",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.pwrtelegram.xyz/bot".$token."/setwebhook?url=http://zirgozaronline.ir/tg/PvSazBot/bots/$un/index.php");
+		file_get_contents("http://api.pwrtelegram.xyz/bot".$token."/setwebhook?url=https://gopv-morphin.rhcloud.com/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
@@ -307,7 +307,7 @@ var_dump(makereq('sendMessage',[
 		$source = str_replace("[*BOTTOKEN*]",$token,$source);
 		$source = str_replace("66443035",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.pwrtelegram.xyz/bot".$token."/setwebhook?url=http://zirgozaronline.ir/tg/PvSazBot/bots/$un/index.php");
+		file_get_contents("http://api.pwrtelegram.xyz/bot".$token."/setwebhook?url=https://gopv-morphin.rhcloud.com/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
@@ -331,10 +331,10 @@ var_dump(makereq('sendMessage',[
 elseif (strpos($textmessage, "/setvip") !== false) {
 $botun = str_replace("/setvip ","",$textmessage);
 SendMessage($chat_id,"$textmessage");
-/*$src = file_get_contents("bots/$botun/index.php");
+$src = file_get_contents("bots/$botun/index.php");
 $nsrc = str_replace("**free**","gold",$src);
 save("data/$botun/index.php",$nsrc);
-SendMessage($chat_id,"Updated!");*/
+SendMessage($chat_id,"Updated!");
 }
 elseif (strpos($textmessage , "/toall") !== false ) {
 if ($from_id == $admin) {
@@ -434,7 +434,7 @@ else {
 	])
 	]));
 
-/*
+
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
         	'text'=>"یکی از ربات های خود را جهت پاک کردن انتخاب کنید : ",
@@ -451,7 +451,7 @@ var_dump(makereq('sendMessage',[
             	],
             	'resize_keyboard'=>true
        		])
-    		])); */
+    		])); 
 }
 }
 elseif ($textmessage == '🔄 ساخت ربات') {
